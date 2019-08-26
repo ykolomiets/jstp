@@ -1,6 +1,6 @@
 {
   "name": "metarhia-jstp",
-  "version": "1.1.1",
+  "version": "0.0.0",
   "author": "Timur Shemsedinov <timur.shemsedinov@gmail.com>",
   "description": "JavaScript Transfer Protocol for Impress Application Server",
   "license": "MIT",
@@ -21,9 +21,6 @@
     "email": "timur.shemsedinov@gmail.com"
   },
   "main": "./jstp.js",
-  "bin": {
-    "jstp-cli": "./bin/cli.js"
-  },
   "browser": {
     "./lib/record-serialization.js": "./lib/record-serialization-fallback.js",
     "./lib/server.js": false,
@@ -55,19 +52,6 @@
     "yargs": "^10.1.2"
   },
   "scripts": {
-    "test": "npm run lint && npm run test-node && npm run test-integration",
-    "test-node": "node tools/run-node-tests.js",
-    "test-integration": "node test/integration/run.js",
-    "test-todo": "tap test/todo",
-    "test-coverage": "nyc npm run test-node",
-    "lint": "eslint . && remark .",
-    "install": "npm run rebuild-node",
-    "build": "npm run build-node && npm run build-browser",
-    "build-node": "node tools/build-native",
-    "rebuild-node": "node tools/build-native --rebuild",
-    "build-browser": "webpack --progress --colors",
-    "prepublish": "npm run build-browser",
-    "pretest": "npm run build-node"
   },
   "engines": {
     "node": ">=6.0.0"
